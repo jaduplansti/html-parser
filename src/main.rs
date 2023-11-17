@@ -2,9 +2,19 @@ use std::fs;
 use std::io::BufReader;
 use std::io::BufRead;
 
+type NodeId = usize;
 struct File {
     fname : String, /* file name */
     lines : Vec<String>, /* lines in the file */
+}
+
+struct DomTree {
+    nodes : Vec<Node>,
+}
+
+struct Node {
+    value : String,
+    childs : Vec<NodeId>,
 }
 
 impl File {
